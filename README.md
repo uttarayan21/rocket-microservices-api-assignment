@@ -1,5 +1,16 @@
 # Microservices api assignment
 
+
+## Running the code
+docker and docker-compose needs to be setup first
+```bash
+cd user_service && docker-compose up -d && cd ..
+cd user_interaction_service && docker-compose up -d && cd ..
+cd content_service && docker-compose up -d && cd ..
+```
+_NOTE: This will take a fair bit of time since rust is a compiled language it needs a few minutes to compile_
+
+## API endpoints
 Since there is no service discovery I have hardcoded the values into each microservices .env file
 
 - user_service -> `localhost:8001`
@@ -16,7 +27,10 @@ The documentation is automatically generated during compilation and doesn't need
 
 
 ## Dockerized everyting
-Including the databases ( postgresql )
+Including the databases (postgresql)
+
+Each service has a builder (rust:latest) which compiles the code and then runs it via a runner (debian:stable-slim) and a postgresql (postgresql:latest) container for the database.
+So thats 2 containers for each service
     - user-service-api
         - [x] user_service
         - [x] user_postgres_service  
