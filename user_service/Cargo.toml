@@ -1,0 +1,16 @@
+[package]
+name = "user_service"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = { version = "1.4.8", features = ["postgres"] }
+diesel_migrations = "1.4.0"
+dotenv = "0.15.0"
+rocket = { version = "0.5.0-rc.1", features = ["json"] }
+
+rocket_okapi = { git = "https://github.com/GREsau/okapi", version = "0.8.0-rc.1", features = ["swagger"] }
+okapi = { git = "https://github.com/GREsau/okapi" , version = "0.7.0-rc.1" }
+schemars = "0.8.6"

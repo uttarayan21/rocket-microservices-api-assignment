@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  user-service-api:
+    build: .
+    restart: unless-stopped
+    container_name: user_service
+    environment:
+      ROCKET_ADDRESS: 0.0.0.0
+      ROCKET_PORT: 8000
+      DATABASE_URL: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}"
+      # POSTGRES_PASSWORD: ZSYSF5nF7Ch73R5r
+      # POSTGRES_USER: user_service
+      # POSTGRES_DB: user_service
+    ports:
+      - 8001:8000
+    links:
+      - user-service-postgres
+
+  user-service-postgres:
+    image: "postgres:latest"
+    restart: unless-stopped
+    container_name: user_service_postgres
+    environment:
+      POSTGRES_PASSWORD: ZSYSF5nF7Ch73R5r
+      POSTGRES_USER: user_service
+      POSTGRES_DB: user_service
+    ports:
+      - ${POSTGRES_PORT}:5432
+
+
