@@ -1,6 +1,5 @@
 # Microservices api assignment
 
-
 ## Running the code
 docker and docker-compose needs to be setup first
 ```bash
@@ -9,6 +8,12 @@ cd user_interaction_service && docker-compose up -d && cd ..
 cd content_service && docker-compose up -d && cd ..
 ```
 _NOTE: This will take a fair bit of time since rust is a compiled language it needs a few minutes to compile_
+
+## Ingesting data
+The scripts folder has a populate.sh script that can populate the databases with dummy data as long as nothing is modified beforehand
+
+_Note: The content service can ingest csv file with 'Content-Type: text/csv but the dates **need** to be a unix timestamp_ 
+
 
 ## API endpoints
 Since there is no service discovery I have hardcoded the values into each microservices .env file
