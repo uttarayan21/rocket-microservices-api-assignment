@@ -16,7 +16,7 @@ cd scripts
 ./populate.sh
 ```
 
-_Note: The content service can ingest csv file with 'Content-Type: text/csv but the dates **need** to be a unix timestamp_ 
+_Note: The content service can ingest csv file with `Content-Type: text/csv` but the dates **need** to be a unix timestamp_ 
 
 
 ## API endpoints
