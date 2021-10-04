@@ -76,7 +76,7 @@ pub fn insert(
         .map_err(to_rocket_response)
 }
 
-/// Like/unlike/read a content by a user
+/// # Like/unlike/read a content by a user
 #[openapi]
 #[post("/<content_id>/<user_id>?<action>")]
 pub async fn action(
@@ -108,7 +108,9 @@ pub async fn action(
     }
 }
 
-/// Update user_interaction by id (Probably not needed for this table but provided just in case)
+/// # Update user_interaction by id
+///
+/// (Probably not needed for this table but provided just in case)
 #[openapi]
 #[put("/?<id>", format = "application/json", data = "<user_interaction>")]
 pub fn update(
@@ -121,7 +123,7 @@ pub fn update(
         .map_err(to_rocket_response)
 }
 
-/// Delete user_interaction by id
+/// # Delete user_interaction by id
 #[openapi]
 #[delete("/?<id>")]
 pub fn delete(id: i32) -> Result<Json<usize>, rocket::http::Status> {
