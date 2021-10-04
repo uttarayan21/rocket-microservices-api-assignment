@@ -40,15 +40,16 @@ Including the databases (postgresql)
 
 Each service has a builder (rust:latest) which compiles the code and then runs it via a runner (debian:stable-slim) and a postgresql (postgresql:latest) container for the database.
 So thats 2 containers for each service
-    - user-service-api
-        - [x] user_service
-        - [x] user_postgres_service  
-    - content-service-api
-        - [x] content_service
-        - [x] content_postgres_service
-    - user-interaction-service-api
-        - [x] user_interaction_service
-        - [x] user_interaction_postgres_service
+
+- user-service-api
+    - [x] user_service
+    - [x] user_postgres_service  
+- content-service-api
+    - [x] content_service
+    - [x] content_postgres_service
+- user-interaction-service-api
+    - [x] user_interaction_service
+    - [x] user_interaction_postgres_service
 
 ## Microservices
 Everything is a microservice with 3 separate instances of postgresql running and obviously 3 separate databases.
