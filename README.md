@@ -11,6 +11,10 @@ _NOTE: This will take a fair bit of time since rust is a compiled language it ne
 
 ## Ingesting data
 The scripts folder has a populate.sh script that can populate the databases with dummy data as long as nothing is modified beforehand
+```bash
+cd scripts
+./populate.sh
+```
 
 _Note: The content service can ingest csv file with 'Content-Type: text/csv but the dates **need** to be a unix timestamp_ 
 
